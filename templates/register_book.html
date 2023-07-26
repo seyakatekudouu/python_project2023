@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header class="header">
+    <div class="navtext-container">
+      <div class="navtext">図書管理アプリ</div>
+    </div>
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li class="top"><a href={{url_for('mypage')}}>home</a></li>
+      <li><a href="{{url_for('list')}}">図書一覧</a></li>
+      <li><a href="{{url_for('logout')}}">図書登録</a></li>
+      <li><a href="{{url_for('search_book')}}">検索</a></li>
+      <li><a href="{{url_for('logout')}}">削除機能</a></li>
+      <li><a href="{{url_for('logout')}}">ログアウト</a></li>
+    </ul>
+
+  </header>
+
+  <h1> 　　　 </h1>
+
+
+  <form action="{{url_for('register_book_exe')}}" method="post">
+      ISBN :<input type="text" name="isbn"><br>
+    タイトル :<input type="text" name="bookname"><br>
+    著者 :<input type="text" name="writer"><br>
+    出版社 :<input type="text" name="shupansha"><br>
+    <button type="submit">登録</button>
+  </form>
+
+</body>
+</html>
